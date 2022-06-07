@@ -5,7 +5,7 @@ let logger = require("morgan");
 let mainRoute = require("./routes/index");
 
 let app = express();
-let PORT = 3000;
+let PORT = procecss.env.PORT || 3000;
 
 // For viewing the engine setup
 app.set("views", path.join(__dirname, "./views"));
