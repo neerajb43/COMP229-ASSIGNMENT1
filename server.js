@@ -15,6 +15,7 @@ require("./config/passport")(passport);
 let app = express();
 let PORT = process.env.PORT || 3000;
 
+
 // database setup in the application
 var configDB = require('./config/db');
 var db = configDB();
