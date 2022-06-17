@@ -4,7 +4,8 @@ html body {
   padding-bottom: 100px;
 }
 /*LOGO CSS*/
-.logo {
+.logo
+{
   width: 55px;
   height: 55px;
 }
@@ -45,6 +46,16 @@ html body {
   margin: 50px auto auto;
   width: 150px;
 }
+
+.hero-login-btn {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  justify-content: center;
+  width: 150px;
+  margin: 50px auto auto auto;
+}
+
 /*CSS OF ABOUT WEBPAGE*/
 .about-title {
   display: flex;
@@ -153,3 +164,9 @@ html body {
   justify-content: center;
   text-align: center;
 }
+
+.login-box {
+  width: 200px;
+  margin: auto;
+}
+
