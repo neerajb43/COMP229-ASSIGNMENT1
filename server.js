@@ -75,9 +75,9 @@ app.use(
   express.static(path.resolve(__dirname, "./public"))
 );
 app.use("/dashboard", express.static(path.resolve(__dirname, "./public")));
-app.use("/users", express.static(path.resolve(__dirname, "./public")));
+app.use("/user", express.static(path.resolve(__dirname, "./public")));
 app.use("/dashboard", express.static(path.join(__dirname, "./node_modules")));
-app.use("/users", express.static(path.join(__dirname, "./node_modules")));
+app.use("/user", express.static(path.join(__dirname, "./node_modules")));
 
 //For the routes
 app.use("/", mainRoute);

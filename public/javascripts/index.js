@@ -1,5 +1,5 @@
-const URL = "https://neerajbhartiportfolio.herokuapp.com/" || "http://localhost:3000/";
-
+const URL = ("https://neerajbhartiportfolio.herokuapp.com/" || "http:/localhost:3000/");
+h
 $("#add_user").submit(function (event) {
   alert("Data Inserted Successfully!");
 });

@@ -2,9 +2,11 @@
 
 //Implemented the module to protect all the routes from breaching directly
 module.exports = {
-  ensureAuthenticated: (req, res, next) => {
+  ensureAuthenticated: (req, res, next) => 
+  {
     //check whether request is authenticated from passport or not
-    if (req.isAuthenticated()) {
+    if (req.isAuthenticated()) 
+    {
       return next();
     }
 
@@ -13,8 +15,10 @@ module.exports = {
     res.redirect("/");
   },
 
-  forwardAuthenticated: (req, res, next) => {
-    if (!req.isAuthenticated()) {
+  forwardAuthenticated: (req, res, next) =>
+  {
+    if (!req.isAuthenticated())
+    {
       return next();
     }
   },

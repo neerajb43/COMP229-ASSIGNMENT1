@@ -3,14 +3,17 @@ const axios = require("axios");
 //dotenv.config({ path: "config.env" });
 const URL =
   process.env.URL ||
-  "https://neerajbhartiportfolio.herokuapp.com/" ||
-  "http://localhost:3000/"||process.env.PORT;
-exports.homeRoutes = (req, res) => {
+  process.env.PORT||"https://neerajbhartiportfolio.herokuapp.com/" ||
+  "http://localhost:3000/";
+exports.homeRoutes = (req, res) =>
+ {
   axios
     .get(`${URL}` + `dashboard/api/contact`)
-    .then(function (response) {
+    .then(function (response) 
+    {
       console.log(response.data);
-      res.render("bContact", {
+      res.render("bContact", 
+      {
         users: response.data,
         title: "Contact Dashboard",
       });
@@ -31,12 +34,14 @@ exports.update_contact = (req, res) => {
     })
     .then(function (userdata) {
       console.log(userdata.data);
-      res.render("update_contact", {
+      res.render("update_contact",
+      {
         user: userdata.data,
         title: "Update Contact",
       });
     })
-    .catch((err) => {
+    .catch((err) =>
+    {
       res.send(err);
     });
 };
