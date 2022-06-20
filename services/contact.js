@@ -1,9 +1,8 @@
 const axios = require("axios");
-//const dotenv = require("dotenv");
-//dotenv.config({ path: "config.env" });
+const dotenv = require("dotenv");
+dotenv.config({ path: "config.env" });
 const URL =
-  process.env.URL ||
-  process.env.PORT||"https://neerajbhartiportfolio.herokuapp.com/" ||
+  process.env.URL ||"https://neerajbhartiportfolio.herokuapp.com/"||
   "http://localhost:3000/";
 exports.homeRoutes = (req, res) =>
  {
@@ -23,11 +22,13 @@ exports.homeRoutes = (req, res) =>
     });
 };
 
+
 exports.add_contact = (req, res) => {
-  res.render("add_contact", { title: "Add Contact" });
+res.render("add_contact", { title: "Add Contact" });
 };
 
-exports.update_contact = (req, res) => {
+exports.update_contact = (req, res) => 
+{
   axios
     .get(`${URL}` + `dashboard/api/contact`, {
       params: { id: req.query.id },

@@ -1,2 +1,42 @@
-New Contact Logout 
-ID	Name	@Email	Phone	Action
+<!-- include header -->
+<%- include('partials/header') %>
+<!-- /include header -->
+
+<!-- Main Site -->
+<main id="site-main">
+  <div class="container mt-5">
+    <div class="box-nav">
+      <a href="/dashboard/add-contact" class="border-shadow btn btn-primary">
+        <span class="text-gradient"
+          >New Contact <i class="fas fa-user"></i
+        ></span>
+      </a>
+      <a href="/user/logout"
+        ><button class="btn btn-primary">Logout</button></a
+      >
+    </div>
+
+    <!-- form handling -->
+    <form action="/dashboard" method="GET" class="mt-5">
+      <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>@Email</th>
+            <th>Phone</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+        </tbody>
+      </table>
+    </form>
+  </div>
+</main>
+<!-- /Main Site -->
+
+<!-- include footer -->
+<%- include('partials/footer') %>
+<!-- /include footer -->

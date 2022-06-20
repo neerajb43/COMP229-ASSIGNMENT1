@@ -1,29 +1,24 @@
-// // Create a reference to the model
-// let UserModel = require('../models/user');
-
-// module.exports.userList = function(req, res, next){
-
-//     UserModel.find( (err, userList)=>{
-
-//         if(err){
-//             return console.error(err);
-//         }
-//         else{
-//             // console.log(userList);
-//             res.render(
-//                 'user', 
-//                 { 
-//                   title: 'User List',
-//                   userList: userList
-//                 }
-//               );
-
-//         }
-
-//     })    
-
-// }
 var Contact = require("../models/contact");
+const axios = require("axios");
+const URL = process.env.PORT || 3000;
+
+exports.homeRoutes = (req, res) =>
+ {
+  axios
+    .get(`${URL}` + `dashboard/api/contact`)
+    .then(function (response) 
+    {
+      console.log(response.data);
+      res.render("bContact", 
+      {
+        users: response.data,
+        title: "Home",
+      });
+    })
+    .catch((err) => {
+      res.send(err);
+    });
+};
 
 // create and save new contact
 exports.create = (req, res) => {

@@ -85,7 +85,14 @@ app.use("/user", express.static(path.join(__dirname, "./node_modules")));
 app.use("/", mainRoute);
 app.use("/user", userRoute);
 app.use("/dashboard", require("./routes/contact"));
+app.set('port', PORT);
 
+// Foo Bar10:01 AM
+// error handlers
+app.use((err, req, res, next) => {
+    console.error(err);
+});
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
+
