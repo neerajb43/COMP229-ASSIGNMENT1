@@ -1,11 +1,12 @@
 let express = require("express");
 let path = require("path");
 let mongoose = require("mongoose");
-//const dotenv = require("dotenv");
-//dotenv.config({ path: "config.env" });
+const dotenv = require("dotenv");
+dotenv.config({ path: "config.env" });
 let logger = require("morgan");
 let session = require("express-session");
 let passport = require("passport");
+
 const flash = require("connect-flash");
 
 //passport config
@@ -19,6 +20,7 @@ let PORT = process.env.PORT || 3000;
 // database setup in the application
 var configDB = require('./config/db');
 var db = configDB();
+
 
 
 let mainRoute = require("./routes/index");
